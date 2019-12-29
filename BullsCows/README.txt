@@ -1,0 +1,2 @@
+The Bull Cow game is what I originally learnt C++ with. I was only just getting to grips with programming at the time as well as C++ so it might not be as high quality as my new stuff when it comes to readability and documentation but it still has a lot of important concepts that I originally grasped here.
+The executable is available above if you would like to give it a try. It currently only has one word that is hard coded in but I moved on to making the unreal game before I added in a dictionary of words.
