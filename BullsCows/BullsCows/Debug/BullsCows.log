@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\ambrose\documents\visual studio 2015\projects\section_02\bullscows\main.cpp(50): warning C4129: ' ': unrecognized character escape sequence
+  FBullCowGame.cpp
+  Generating Code...
+  BullsCows.vcxproj -> C:\Users\ambrose\documents\visual studio 2015\Projects\Section_02\Debug\BullsCows.exe
+  BullsCows.vcxproj -> C:\Users\ambrose\documents\visual studio 2015\Projects\Section_02\Debug\BullsCows.pdb (Full PDB)
