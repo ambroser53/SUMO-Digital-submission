@@ -1,0 +1,1 @@
+This game is unfinished and won't compile yet, I am working on it in my free time. I am hoping to one day move the code over to a non-terminal based game i.e. putting these ideas into an unreal game of some sort.
