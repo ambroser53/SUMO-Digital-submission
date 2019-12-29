@@ -67,7 +67,8 @@ void Monster::teachMove(Move newMove) {
 			currentMoves[0] = newMove;
 		}
 		else if (currentMoves.size()==3) {
-			//decide which move to delete to user
+			//user decides which move to forget
+                        replaceMove(newMove);
 		}
 		else {
 			currentMoves.push_back(newMove);
