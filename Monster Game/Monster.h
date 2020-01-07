@@ -6,7 +6,7 @@ using namespace std;
 
 //Move const allMoves
 
-enum ELEMENT {FIRE = "Fire",WATER = "Water",GRASS = "Grass"};
+enum ELEMENT {FIRE = "Fire",WATER = "Water",GRASS = "Grass",ELECTRIC = "Electric"};
 
 #ifndef Monster
 
@@ -16,8 +16,13 @@ enum ELEMENT {FIRE = "Fire",WATER = "Water",GRASS = "Grass"};
  */
 class Monster {
 public:
-        //
-	Monster();
+        //basic name only constructor
+	Monster(string);
+        
+        //overloaded every stat constructor
+        Monster(string name, int attack, int defense, int speed, int lvl, 
+            int exp, ELEMENT e, Move m1 = NULL, Move m2 = NULL, Move m3 = NULL);
+       
 	//getter functions
 	string getMonsterName() const { return monsterName; };
 
@@ -54,6 +59,23 @@ public:
 
 	//~Monster();
 
+protected:
+	string monsterName;
+	//an attack does damage: (attacker.attack*moveAttack)/defender.defense
+	int statAttack;
+	int statDefense;
+	//whichever monster has higher speed goes first
+	int statSpeed;
+	int statLevel;
+	//exp will increment after each battle by 1 for each level of defeated monster
+	int EXP;
+	//the ExpThreshold is always twice the monsters Level, therefore to level up 
+	//a monster must beat two monsters the same level as it or equivalent
+	int ExpThreshold = statLevel*2;
+	ELEMENT const monsterElement;
+
+	vector<Move> currentMoves;
+        
 private:
         ///takes in the new move the monster could potentially want to learn
         ///will forget the one the player doesn't want
@@ -68,22 +90,6 @@ private:
          *  @return moveToForget the move the player wants to forget (could be new move)
          */
         Move chooseMove(Move,Move,Move,Move);
-        
-	string monsterName;
-	//an attack does damage: (attacker.attack*moveAttack)/defender.defense
-	int statAttack;
-	int statDefense;
-	//whichever monster has higher speed goes first
-	int statSpeed;
-	int statLevel;
-	//exp will increment after each battle by 1 for each level of defeated monster
-	int EXP;
-	//the ExpThreshold is always twice the monsters Level, therefore to level up 
-	//a monster must beat two monsters the same level as it or equivalent
-	int ExpThreshold = statLevel*2;
-	const ELEMENT monsterElement;
-
-	vector<Move> currentMoves;
 };
 
 #endif // !Monster
